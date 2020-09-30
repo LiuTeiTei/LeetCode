@@ -2,6 +2,6 @@
 
 ## Easy
 
--[] 404. Sum of Left Leaves
+-[]  404. Sum of Left Leaves
 
--[] 563. Binary Tree Tilt
+-[]  563. Binary Tree Tilt
