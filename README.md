@@ -2,5 +2,5 @@
 
 ## Easy
 
-- [ ] 404.Sum of Left Leaves
+- [x] 404.Sum of Left Leaves
 - [ ] 503.Binary Tree Tilt
