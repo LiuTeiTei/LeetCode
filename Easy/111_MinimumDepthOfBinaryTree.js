@@ -24,6 +24,7 @@ function TreeNode(val, left, right) {
     this.right = (right===undefined ? null : right)
 }
 
+// 注意，是最近叶子节点
 var minDepth = function(root) {
     if (!root) return 0
     if (!root.left && !root.right) return 1
