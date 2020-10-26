@@ -30,6 +30,8 @@ pop、top 和 getMin 操作总是在 非空栈 上调用。
 /**
  * initialize your data structure here.
  */
+
+// 还有个思路是，可以使用一个辅助栈 min_stack，与元素栈同步插入与删除，用于存储与每个元素对应的最小值
 var MinStack = function() {
     this.stack = []
 };
@@ -66,15 +68,6 @@ MinStack.prototype.getMin = function() {
     }
     return min
 };
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * var obj = new MinStack()
- * obj.push(x)
- * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
- */
 
  var obj = new MinStack()
  obj.push(1)
