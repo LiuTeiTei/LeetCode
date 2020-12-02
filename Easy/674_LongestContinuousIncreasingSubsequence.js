@@ -22,22 +22,42 @@ https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/
  * @param {number[]} nums
  * @return {number}
  */
+{
+    let findLengthOfLCIS = function(nums) {
+        if (!nums || nums.length < 1) return null
+        if (nums.length === 1) return 1
+    
+        let result = 1
+        let sum = 1
+        for (let i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                sum += 1
+            } else {
+                result = Math.max(result, sum)
+                sum = 1
+            }
+        }
+    
+        return Math.max(result, sum)
+    };
+}
+
+// 每个（连续）增加的子序列是不相交的，
+// 并且每当 nums[i-1]>=nums[i] 时，每个此类子序列的边界都会出现。
+// 当它这样做时，它标志着在 nums[i] 处开始一个新的递增子序列，
+// 我们将这样的 i 存储在变量 anchor 中。
 var findLengthOfLCIS = function(nums) {
     if (!nums || nums.length < 1) return null
     if (nums.length === 1) return 1
 
     let result = 1
-    let sum = 1
-    for(let i = 1; i < nums.length; i++) {
-        if (nums[i] > nums[i - 1]) {
-            sum += 1
-        } else {
-            result = Math.max(result, sum)
-            sum = 1
-        }
+    let anchor = 0
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] <= nums[i - 1]) anchor = i
+        result = Math.max(result, i - anchor + 1)
     }
 
-    return Math.max(result, sum)
-};
+    return result
+}
 
 console.log(findLengthOfLCIS([1,3,5,4,2,3,4,5]))
