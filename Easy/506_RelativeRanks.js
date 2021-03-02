@@ -31,7 +31,7 @@ N 是一个正整数并且不会超过 10000。
 //  先排序，后遍历，耗时长，O(n^2) > 200ms
 {
 
-    var findRelativeRanks = function(score) {
+    let findRelativeRanks = function(score) {
         if(!score.length) return
     
         const sortableScore = score.slice().sort((a, b) => b - a)
@@ -61,7 +61,7 @@ N 是一个正整数并且不会超过 10000。
 // 同时遍历和排序，耗时长，O(2n^2) > 200ms
 {
 
-    var findRelativeRanks = function(score) {
+    let findRelativeRanks = function(score) {
         if(!score.length) return
     
         let result = Array(score.length).fill(-1)
@@ -92,7 +92,7 @@ N 是一个正整数并且不会超过 10000。
 //  创建 map，然后排序，最后遍历 map，节省一半时间，O(n) < 100ms
 {
 
-    var findRelativeRanks = function(score) {
+    let findRelativeRanks = function(score) {
         if(!score.length) return
 
         const mapScore = new Map()
