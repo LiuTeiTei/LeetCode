@@ -14,6 +14,7 @@
 + [563. Binary Tree Tilt](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/563_BinaryTreeTilt.js)
 + [674. Longest Continuous Increasing Subsequence](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/674_LongestContinuousIncreasingSubsequence.js)
 + [703. Kth Largest Element in a Stream](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/703_KthLargestElementInAStream.js)
++ [868. Binary Gap](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/868_BinaryGap.js)
 + [874. Walking Robot Simulation](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/874_WalkingRobotSimulation.js)
 + [942. DI String Match](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/942_DIStringMatch.js)
 + [944. Delete Columns to Make Sorted](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/944_DeleteColumnsToMakeSorted.js)
