@@ -13,6 +13,7 @@
 + [448. Find All Numbers Disappeared in an Array](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/448_FindAllNumbersDisappearedInAnArray.js)
 + [504. Base 7](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/504_Base7.js)
 + [506. Relative Ranks](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/506_RelativeRanks.js)
++ [561. Array Partition I](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/561_ArrayPartitionI.js)
 + [563. Binary Tree Tilt](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/563_BinaryTreeTilt.js)
 + [674. Longest Continuous Increasing Subsequence](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/674_LongestContinuousIncreasingSubsequence.js)
 + [703. Kth Largest Element in a Stream](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/703_KthLargestElementInAStream.js)
