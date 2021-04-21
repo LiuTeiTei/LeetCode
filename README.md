@@ -6,6 +6,7 @@
 + [35. Search Insert Position](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/35_SearchInsertPosition.js)
 + [111. Minimum Depth of Binary Tree](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/111_MinimumDepthOfBinaryTree.js)
 + [155. Min Stack](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/155_MinStack.js)
++ [219. Contains Duplicate II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/219_ContainsDuplicateII.js)
 + [303. Range Sum Query - Immutable](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/303_RangeSumQueryImmutable.js)
 + [401. Binary Watch](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/401_BinaryWatch.js)
 + [404. Sum of Left Leaves](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/404_SumofLeftLeaves.js)
