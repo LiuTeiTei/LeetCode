@@ -94,4 +94,27 @@ s 由英文字母、数字、符号和空格组成
   };
 }
 
+// Runtime:96 ms   Memory:41.4 MB
+// 利用 utf 巧妙的记录下字符出现的上个位置，遇到重复的字符就从该字符的下一个字符开始
+interface Array<T> {
+  fill(value: T): Array<T>;
+}
+function lengthOfLongestSubstring(s: string): number {
+  let max = 0;
+  const last = Array<number>(128).fill(-1)
+
+  // 窗口开始位置
+  let start = 0;
+  for (let i = 0; i < s.length; i++) {
+    const UTFIndex = s.charCodeAt(i);
+    // 从上一次出现位置的下一个位置开始
+    start = Math.max(start, last[UTFIndex] + 1);
+    max = Math.max(max, i - start + 1)
+    // 记录这一次出现的位置
+    last[UTFIndex] = i;
+  }
+
+  return max;
+};
+
 console.log(lengthOfLongestSubstring('asbcafkdj'));
