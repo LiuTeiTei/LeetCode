@@ -46,9 +46,28 @@ function threeSum (nums: number[]): number[][] {
   const res: Array<string> = []
 
   // 在剩下的数组里面查找目标 c
+  // const findThird = (a: number, b: number, arr: Array<number>) => {
+  //   const c = 0 - (a + b)
+  //   return arr.includes(c) ? [a, b, c].sort((a, b) => a - b).join(',') : undefined
+  // }
+
+  // 因为是按顺序排列的，所以当 arr[i] < c 时前面的值肯定不能满足条件，不需要再遍历了
   const findThird = (a: number, b: number, arr: Array<number>) => {
     const c = 0 - (a + b)
-    return arr.includes(c) ? [a, b, c].sort((a, b) => a - b).join(',') : undefined
+    let exit = false
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+      if (arr[i] === c) {
+        exit = true
+        break
+      }
+
+      if (arr[i] < c) {
+        break
+      }
+    }
+    
+    return exit ? [a, b, c].join(',') : undefined
   }
 
   for (let i = 0; i < nums.length; i++) {
@@ -56,6 +75,7 @@ function threeSum (nums: number[]): number[][] {
       const restNums = nums.slice(j + 1, nums.length)
       const resChild = findThird(nums[i], nums[j], restNums)
 
+      // 需要排序重复的值
       if (resChild && !res.includes(resChild)) {
         res.push(resChild)
       }
