@@ -22,32 +22,30 @@ nums 的每个元素都将在 [-9999, 9999]之间。
 
 // 左闭右闭区间
 // left == right 在区间 [left, right] 是有意义的
-{
-  function search(nums: number[], target: number): number {
-    let left = 0;
-    let right = nums.length - 1;
+let search = function (nums: number[], target: number): number {
+  let left = 0;
+  let right = nums.length - 1;
 
-    while (left <= right) {
-      const middle = Math.floor((left + right) / 2)
-  
-      if (target > nums[middle]) {
-        left = middle + 1
-      } else if (target < nums[middle]) {
-        right = middle - 1
-      } else {
-        return middle
-      }
-  
+  while (left <= right) {
+    const middle = Math.floor((left + right) / 2)
+
+    if (target > nums[middle]) {
+      left = middle + 1
+    } else if (target < nums[middle]) {
+      right = middle - 1
+    } else {
+      return middle
     }
-  
-    return -1
-  };
+
+  }
+
+  return -1
 }
 
 // 左闭右开区间
 // left == right 在区间 [left, right) 是没有意义的
 {
-  function search(nums: number[], target: number): number {
+  let search = function (nums: number[], target: number): number {
     let left = 0;
     let right = nums.length;  // 注意
   
