@@ -3,7 +3,7 @@
 ## Easy
 
 + [20. Valid Parentheses](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/20_ValidParentheses.js)
-+ [35. Search Insert Position](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/35_SearchInsertPosition.js)
++ [35. Search Insert Position](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/35_SearchInsertPosition.ts)
 + [111. Minimum Depth of Binary Tree](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/111_MinimumDepthOfBinaryTree.js)
 + [155. Min Stack](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/155_MinStack.js)
 + [219. Contains Duplicate II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/219_ContainsDuplicateII.js)
