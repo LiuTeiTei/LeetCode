@@ -31,3 +31,4 @@
 + [3. Longest Substring Without Repeating Characters](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/3_LongestSubstringWithoutRepeatingCharacters.ts)
 + [7. Reverse Integer](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/7_ReverseInteger.ts)
 + [15. 3Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/15_3Sum.ts)
++ [34. Find First and Last Position of Element in Sorted Array](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/34_FindFirstAndLastPositionOfElementInSortedArray.ts)
