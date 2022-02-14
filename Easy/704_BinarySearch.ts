@@ -1,5 +1,6 @@
 /* 
 https://leetcode.com/problems/binary-search/
+https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md
 
 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
 
@@ -49,7 +50,7 @@ let search = function (nums: number[], target: number): number {
     let left = 0;
     let right = nums.length;  // 注意
   
-    while (left < right) {
+    while (left < right) {  // 注意
       const middle = Math.floor((left + right) / 2)
   
       if (target > nums[middle]) {
