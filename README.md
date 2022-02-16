@@ -24,6 +24,7 @@
 + [874. Walking Robot Simulation](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/874_WalkingRobotSimulation.js)
 + [942. DI String Match](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/942_DIStringMatch.js)
 + [944. Delete Columns to Make Sorted](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/944_DeleteColumnsToMakeSorted.js)
++ [977. Squares of a Sorted Array](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/977_SquaresOfASortedArray.ts)
 + [1185. Day of the Week](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/1185_DayOfTheWeek.js)
 + [1309. Decrypt String from Alphabet to Integer Mapping](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/1309_DecryptStringfromAlphabetToIntegerMapping.js)
 
