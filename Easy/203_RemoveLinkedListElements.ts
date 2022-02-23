@@ -44,13 +44,18 @@ class ListNode {
   }
 }
 
-const head = new ListNode(1)
-head.next = new ListNode(2);
-head.next.next = new ListNode(6);
-head.next.next.next = new ListNode(3);
-head.next.next.next.next = new ListNode(4);
-head.next.next.next.next.next = new ListNode(5);
-head.next.next.next.next.next.next = new ListNode(6);
+const getListNode = (nums: number[]) => {
+  let result = new ListNode(nums[0])
+
+  for (let i = 1, currentNode = result; i < nums.length; i++) {
+    currentNode.next = new ListNode(nums[i])
+    currentNode = currentNode.next
+  }
+
+  return result
+}
+
+const head = getListNode([1, 2, 6, 3, 4, 5, 6])
 
 // 在原链表上直接删除：移除头结点 和 移除其他节点的操作方式是不一样，其实在写代码的时候也会发现，需要单独写一段逻辑来处理移除头结点的情况。
 // Runtime: 152 ms, faster than 29.14%, Memory Usage: 47.9 MB, less than 20.86%
