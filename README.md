@@ -37,3 +37,4 @@
 + [34. Find First and Last Position of Element in Sorted Array](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/34_FindFirstAndLastPositionOfElementInSortedArray.ts)
 + [59. Spiral Matrix II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/59_SpiralMatrixII.ts)
 + [209. Minimum Size Subarray Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/209_MinimumSizeSubarraySum.ts)
++ [707. Design Linked List](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/707_DesignLinkedList.ts)
