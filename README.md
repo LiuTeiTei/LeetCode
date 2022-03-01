@@ -8,6 +8,7 @@
 + [111. Minimum Depth of Binary Tree](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/111_MinimumDepthOfBinaryTree.js)
 + [155. Min Stack](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/155_MinStack.js)
 + [203. Remove Linked List Elements](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/203_RemoveLinkedListElements.ts)
++ [206. Reverse Linked List](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/206_ReverseLinkedList.ts)
 + [219. Contains Duplicate II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/219_ContainsDuplicateII.js)
 + [303. Range Sum Query - Immutable](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/303_RangeSumQueryImmutable.js)
 + [401. Binary Watch](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/401_BinaryWatch.js)
