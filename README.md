@@ -11,6 +11,7 @@
 + [203. Remove Linked List Elements](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/203_RemoveLinkedListElements.ts)
 + [206. Reverse Linked List](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/206_ReverseLinkedList.ts)
 + [219. Contains Duplicate II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/219_ContainsDuplicateII.js)
++ [242. Valid Anagram](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/242_ValidAnagram.ts)
 + [303. Range Sum Query - Immutable](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/303_RangeSumQueryImmutable.js)
 + [401. Binary Watch](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/401_BinaryWatch.js)
 + [404. Sum of Left Leaves](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/404_SumofLeftLeaves.js)
