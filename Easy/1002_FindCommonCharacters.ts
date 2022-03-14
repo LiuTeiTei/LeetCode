@@ -89,4 +89,7 @@ function commonChars(words: string[]): string[] {
   return result
 };
 
+// 还有个方法，不需要 n 个 hash 数组，一个 { key: string, value: number[]} 的 hash 对象就可以
+// 这样只需要一个变量保存，循环的时候每个 string 少循环 m 次
+
 console.log(commonChars(["bella","label","roller"]))
