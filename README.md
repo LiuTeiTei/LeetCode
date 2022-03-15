@@ -2,12 +2,14 @@
 
 ## Easy
 
++ [1. Two Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/1_TwoSum.ts)
 + [20. Valid Parentheses](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/20_ValidParentheses.js)
 + [27. Remove Element](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/27_RemoveElement.ts)
 + [35. Search Insert Position](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/35_SearchInsertPosition.ts)
 + [111. Minimum Depth of Binary Tree](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/111_MinimumDepthOfBinaryTree.js)
 + [155. Min Stack](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/155_MinStack.js)
 + [160. Intersection of Two Linked Lists](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/160_IntersectionOfTwoLinkedLists.ts)
++ [202. Happy Number](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/202_HappyNumber.ts)
 + [203. Remove Linked List Elements](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/203_RemoveLinkedListElements.ts)
 + [206. Reverse Linked List](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/206_ReverseLinkedList.ts)
 + [219. Contains Duplicate II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/219_ContainsDuplicateII.js)
