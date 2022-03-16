@@ -16,6 +16,7 @@
 + [242. Valid Anagram](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/242_ValidAnagram.ts)
 + [303. Range Sum Query - Immutable](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/303_RangeSumQueryImmutable.js)
 + [349. Intersection of Two Arrays](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/349_IntersectionOfTwoArrays.ts)
++ [383. Ransom Note](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/383_RansomNote.ts)
 + [401. Binary Watch](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/401_BinaryWatch.js)
 + [404. Sum of Left Leaves](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/404_SumofLeftLeaves.js)
 + [415. Add Strings](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/415_Add%20Strings.js)
@@ -47,4 +48,5 @@
 + [59. Spiral Matrix II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/59_SpiralMatrixII.ts)
 + [142. Linked List Cycle II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/142_LinkedListCycleII.ts)
 + [209. Minimum Size Subarray Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/209_MinimumSizeSubarraySum.ts)
++ [454. 4Sum II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/454_4SumII.ts)
 + [707. Design Linked List](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/707_DesignLinkedList.ts)
