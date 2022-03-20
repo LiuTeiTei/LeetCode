@@ -44,6 +44,7 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0001.%E4
 }
 
 // 先排序，头尾指针，指针从数组两头开始
+// 如果结果要求是数值，可以直接返回；如果要求的是索引，还需要查下标再返回
 // 时间复杂度 O(4n)
 // Runtime: 80 ms 90.92%  ----  Memory Usage: 40.9 MB 82.17% 
 {
