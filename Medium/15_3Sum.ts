@@ -94,8 +94,8 @@ interface Array<T> {
   };
 }
 
-// 三指针，但只排序，不做删除等额外的处理
-// 时间复杂度 O(n^3)
+// 三指针，但只排序，不做删除等额外的处理（其实就是双指针，因为不断移动的只有 middleP 和 rightP）
+// 时间复杂度 O(n^2)
 // Runtime: 199 ms, faster than 79.21%, Memory Usage: 52.7 MB, less than 90.38%
 function threeSum(nums: number[]): number[][] {
   if (nums.length < 3) return []
