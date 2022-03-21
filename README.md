@@ -1,7 +1,5 @@
 # LeetCode
 
-
-
 ## Easy
 
 - [20. Valid Parentheses](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/20_ValidParentheses.js)
@@ -33,8 +31,6 @@
 - [7. Reverse Integer](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/7_ReverseInteger.ts)
 - [34. Find First and Last Position of Element in Sorted Array](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/34_FindFirstAndLastPositionOfElementInSortedArray.ts)
 
-
-
 ## Array
 
 ### Easy
@@ -47,8 +43,6 @@
 
 - [209. Minimum Size Subarray Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/209_MinimumSizeSubarraySum.ts)
 - [59. Spiral Matrix II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/59_SpiralMatrixII.ts)
-
-
 
 ## Link
 
@@ -64,8 +58,6 @@
 - [24. Swap Nodes in Pairs](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/24_SwapNodesInPairs.ts)
 - [19. Remove Nth Node From End of List](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/19_RemoveNthNodeFromEndOfList.ts)
 - [142. Linked List Cycle II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/142_LinkedListCycleII.ts)
-
-
 
 ## Hash Set Map
 
@@ -84,10 +76,10 @@
 - [15. 3Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/15_3Sum.ts)
 - [18. 4Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/18_4Sum.ts)
 
-
-
 ## String
 
 ### Easy
+
+- [344. Reverse String](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/344_ReverseString.ts)
 
 ### Medium
