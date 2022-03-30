@@ -82,6 +82,7 @@
 
 - [344. Reverse String](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/344_ReverseString.ts)
 - [541. Reverse String II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/541_ReverseStringII.ts)
+- [剑指 Offer 58 - II. 左旋转字符串](https://github.com/LiuTeiTei/LeetCode/blob/master/Others/58_II_ReverseLeftWords.ts)
 
 ### Medium
 
