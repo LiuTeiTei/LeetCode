@@ -83,8 +83,9 @@
 - [344. Reverse String](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/344_ReverseString.ts)
 - [541. Reverse String II](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/541_ReverseStringII.ts)
 - [剑指 Offer 58 - II. 左旋转字符串](https://github.com/LiuTeiTei/LeetCode/blob/master/Others/58_II_ReverseLeftWords.ts)
-- [28. Implement strStr](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/28_ImplementStrStr.ts)
 - [trimSpace](https://github.com/LiuTeiTei/LeetCode/blob/master/Others/trimSpace.ts)
+- [28. Implement strStr](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/28_ImplementStrStr.ts)
+- [459. Repeated Substring Pattern](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/459_RepeatedSubstringPattern.ts)
 
 ### Medium
 
