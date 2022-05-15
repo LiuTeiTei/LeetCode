@@ -90,3 +90,9 @@
 ### Medium
 
 - [151. Reverse Words in a String](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/151_ReverseWordsInAString.ts)
+
+## Stack & List
+
+### Easy
+
+- [232. Implement Queue using Stacks](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/232_ImplementQueueUsingStacks.ts)
