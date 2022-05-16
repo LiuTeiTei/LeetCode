@@ -96,3 +96,4 @@
 ### Easy
 
 - [232. Implement Queue using Stacks](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/232_ImplementQueueUsingStacks.ts)
+- [225. Implement Stack using Queues](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/225_ImplementStackUsingQueues.ts)
