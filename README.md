@@ -2,7 +2,6 @@
 
 ## Easy
 
-- [20. Valid Parentheses](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/20_ValidParentheses.js)
 - [35. Search Insert Position](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/35_SearchInsertPosition.ts)
 - [111. Minimum Depth of Binary Tree](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/111_MinimumDepthOfBinaryTree.js)
 - [155. Min Stack](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/155_MinStack.js)
@@ -97,3 +96,4 @@
 
 - [232. Implement Queue using Stacks](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/232_ImplementQueueUsingStacks.ts)
 - [225. Implement Stack using Queues](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/225_ImplementStackUsingQueues.ts)
+- [20. Valid Parentheses](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/20_ValidParentheses.ts)
