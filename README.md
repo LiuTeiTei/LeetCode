@@ -98,3 +98,7 @@
 - [225. Implement Stack using Queues](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/225_ImplementStackUsingQueues.ts)
 - [20. Valid Parentheses](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/20_ValidParentheses.ts)
 - [1047. Remove All Adjacent Duplicates In String](https://github.com/AngelHalo-16/LeetCode/blob/master/Easy/1047_RemoveAllAdjacentDuplicatesInString.ts)
+
+### Medium
+
+- [150. Evaluate Reverse Polish Notation](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/150_EvaluateReversePolishNotation.ts)
