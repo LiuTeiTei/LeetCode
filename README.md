@@ -107,3 +107,9 @@
 ### HArd
 
 - [239. Sliding Window Maximum](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/239_SlidingWindowMaximum.ts)
+
+## Tree
+
+### Easy
+
+- [144. 94. 145. TraversalTree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/144_94_145_TraversalTree.ts)
