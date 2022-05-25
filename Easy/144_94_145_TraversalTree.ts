@@ -57,47 +57,124 @@ class TreeNode {
   }
 }
 
+/** ------------------------------------------------------------------------------------------------ */
 /** 144. 二叉树的前序遍历----递归方法 */
-function preorderTraversal(root: TreeNode | null): number[] {
-  const traversal = (currTree: TreeNode | null, result: number[]): void => {
-    if (currTree === null) return
-    result.push(currTree.val)
-    traversal(currTree.left, result)
-    traversal(currTree.right, result)
-  }
+{
+  function preorderTraversal(root: TreeNode | null): number[] {
+    const traversal = (currTree: TreeNode | null, result: number[]): void => {
+      if (currTree === null) return
+      result.push(currTree.val)
+      traversal(currTree.left, result)
+      traversal(currTree.right, result)
+    }
+  
+    const result: number[] = []
+    traversal(root, result)
+    return result
+  };
+}
 
-  const result: number[] = []
-  traversal(root, result)
-  return result
-};
-
+/** ------------------------------------------------------------------------------------------------ */
 /** 94. 二叉树的中序遍历----递归方法 */
-function inorderTraversal(root: TreeNode | null): number[] {
-  const traversal = (currTree: TreeNode | null, result: number[]): void => {
-    if (currTree === null) return
-    traversal(currTree.left, result)
-    result.push(currTree.val)
-    traversal(currTree.right, result)
-  }
+{
+  function inorderTraversal(root: TreeNode | null): number[] {
+    const traversal = (currTree: TreeNode | null, result: number[]): void => {
+      if (currTree === null) return
+      traversal(currTree.left, result)
+      result.push(currTree.val)
+      traversal(currTree.right, result)
+    }
+  
+    const result: number[] = []
+    traversal(root, result)
+    return result
+  };
+}
 
-  const result: number[] = []
-  traversal(root, result)
-  return result
-};
-
+/** ------------------------------------------------------------------------------------------------ */
 /** 145. 二叉树的后序遍历----递归方法 */
-function postorderTraversal(root: TreeNode | null): number[] {
-  const traversal = (currTree: TreeNode | null, result: number[]): void => {
-    if (currTree === null) return
-    traversal(currTree.left, result)
-    traversal(currTree.right, result)
-    result.push(currTree.val)
-  }
+{
+  function postorderTraversal(root: TreeNode | null): number[] {
+    const traversal = (currTree: TreeNode | null, result: number[]): void => {
+      if (currTree === null) return
+      traversal(currTree.left, result)
+      traversal(currTree.right, result)
+      result.push(currTree.val)
+    }
+  
+    const result: number[] = []
+    traversal(root, result)
+    return result
+  };
+}
+
+/** ------------------------------------------------------------------------------------------------ */
+/** 144. 二叉树的前序遍历----迭代方法 */
+function preorderTraversal(root: TreeNode | null): number[] {
+  if (root === null) return []
 
   const result: number[] = []
-  traversal(root, result)
+  const treeStack: TreeNode[] = []
+  let currTree = root
+  treeStack.push(root)
+
+  // 抛出中间节点，压入右节点，再压入左节点，如此循环
+  while(treeStack.length > 0) {
+    currTree = treeStack.pop()!
+    result.push(currTree.val)
+    if (currTree.right !== null) treeStack.push(currTree.right)
+    if (currTree.left !== null) treeStack.push(currTree.left)
+  }
+
   return result
 };
+
+/** ------------------------------------------------------------------------------------------------ */
+/** 94. 二叉树的中序遍历----迭代方法 */
+function inorderTraversal(root: TreeNode | null): number[] {
+  if (root === null) return []
+
+  const result: number[] = []
+  const treeStack: TreeNode[] = []
+  let currTree: TreeNode | null = root
+
+  // 压入左节点直到左叶子，抛出左叶子，抛出中间节点，压入右节点，继续压入左节点直到左叶子......
+  while(currTree !== null || treeStack.length > 0) {
+    if (currTree !== null) {
+      treeStack.push(currTree)
+      currTree = currTree.left
+    } else {
+      currTree = treeStack.pop()!
+      result.push(currTree.val)
+      currTree = currTree.right
+    }
+  }
+
+  return result
+};
+
+/** ------------------------------------------------------------------------------------------------ */
+/** 145. 二叉树的后序遍历----迭代方法 */
+function postorderTraversal(root: TreeNode | null): number[] {
+  if (root === null) return []
+
+  const result: number[] = []
+  const treeStack: TreeNode[] = []
+  let currTree = root
+  treeStack.push(root)
+
+  // 前序遍历（中左右）==》调整为（中右左）==》反转就是后序遍历（左右中）
+  while(treeStack.length > 0) {
+    currTree = treeStack.pop()!
+    result.push(currTree.val)
+    if (currTree.left !== null) treeStack.push(currTree.left)
+    if (currTree.right !== null) treeStack.push(currTree.right)
+  }
+
+  return result.reverse()
+};
+
+/** ------------------------------------------------------------------------------------------------ */
 
 const tree = new TreeNode(1, new TreeNode(2), new TreeNode(3))
 console.log(preorderTraversal(tree))  // [1, 2, 3]
