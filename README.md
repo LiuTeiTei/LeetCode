@@ -114,6 +114,8 @@
 
 - [144. 94. 145. TraversalTree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/144_94_145_TraversalTree.ts)
 
+- [226. Invert Binary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/226_InvertBinaryTree.ts)
+
 ### Medium
 
 - [102. Binary Tree Level Order Traversal](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/102_BinaryTreeLevelOrderTraversal.ts)
