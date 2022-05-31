@@ -118,6 +118,8 @@
 
 - [101. Symmetric Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/101_SymmetricTree.ts)
 
+- [104. Maximum Depth of Binary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/104_MaximumDepthOfBinaryTree.ts)
+
 ### Medium
 
 - [102. Binary Tree Level Order Traversal](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/102_BinaryTreeLevelOrderTraversal.ts)
