@@ -120,6 +120,8 @@
 
 - [104. Maximum Depth of Binary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/104_MaximumDepthOfBinaryTree.ts)
 
+- [559. Maximum Depth of N-ary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/559_MaximumDepthOfN-aryTree.ts)
+
 ### Medium
 
 - [102. Binary Tree Level Order Traversal](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/102_BinaryTreeLevelOrderTraversal.ts)
