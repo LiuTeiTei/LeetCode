@@ -361,7 +361,7 @@
 - [150. Evaluate Reverse Polish Notation](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/150_EvaluateReversePolishNotation.ts)
 - [347. Top K Frequent Elements](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/347_TopKFrequentElements.ts)
 
-### HArd
+### Hard
 
 - [239. Sliding Window Maximum](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/239_SlidingWindowMaximum.ts)
 
@@ -379,3 +379,4 @@
 ### Medium
 
 - [102. Binary Tree Level Order Traversal](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/102_BinaryTreeLevelOrderTraversal.ts)
+- [222. Count Complete Tree Nodes](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/222_CountCompleteTreeNodes.ts)
