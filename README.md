@@ -375,6 +375,7 @@
 - [104. Maximum Depth of Binary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/104_MaximumDepthOfBinaryTree.ts)
 - [559. Maximum Depth of N-ary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/559_MaximumDepthOfN-aryTree.ts)
 - [111. Minimum Depth of Binary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/111_MinimumDepthOfBinaryTree.ts)
+- [110. Balanced Binary Tree](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/110_BalancedBinaryTree.ts)
 
 ### Medium
 
