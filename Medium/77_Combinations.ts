@@ -26,24 +26,50 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0077.%E7
 1 <= k <= n
 */
 
+{
+  function combine(n: number, k: number): number[][] {
+    // 初始化某一次结果
+    const path: number[] = []
+    // 初始化最终结果
+    const result: number[][] = []
+  
+    // 定义循环函数，for 循环用来横向遍历（n），递归的过程是纵向遍历（k）
+    const getPath = (startIndex: number) => {
+      // 定义单次循环的终止条件
+      if (path.length === k) {
+        result.push(path.slice())
+        return
+      }
+  
+      for (let i = startIndex; i <= n; i++) {
+        path.push(i)
+        getPath(i + 1)
+        path.pop()  // 回溯，撤销处理的节点
+      }
+    }
+  
+    getPath(1)
+    return result
+  };
+}
+
+// 剪枝优化
 function combine(n: number, k: number): number[][] {
-  // 初始化某一次结果
   const path: number[] = []
-  // 初始化最终结果
   const result: number[][] = []
 
-  // 定义循环函数，for 循环用来横向遍历（n），递归的过程是纵向遍历（k）
   const getPath = (startIndex: number) => {
-    // 定义单次循环的终止条件
     if (path.length === k) {
       result.push(path.slice())
       return
     }
 
-    for (let i = startIndex; i <= n; i++) {
+    // 如果 for 循环选择的起始位置之后的元素个数已经不足我们需要的元素个数了，那么就没有必要搜索了
+    // 在集合 n 中至多要从 n - (k - path.length()) + 1，开始遍历
+    for (let i = startIndex; i <= n - (k - path.length) + 1; i++) {
       path.push(i)
       getPath(i + 1)
-      path.pop()  // 回溯，撤销处理的节点
+      path.pop()
     }
   }
 
