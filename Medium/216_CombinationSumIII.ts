@@ -48,7 +48,7 @@ function combinationSum3(k: number, n: number): number[][] {
     // 剪枝优化：已选元素总和如果已经大于 n 了，那么往后遍历就没有意义了，直接剪掉
     if (sum > n || path.length > k) return
 
-    // 剪枝优化
+    // 剪枝优化：从 9 - (k - path.length()) + 2 开始的数，不满足总数 k，直接剪掉
     for (let i = startValue; i <= 9 - (k - path.length) + 1; i++) {
       path.push(i)
       backtracking(i + 1, sum + i)
