@@ -48,7 +48,6 @@ candidate 中的每个元素都 互不相同
         return
       }
   
-      // 剪枝优化，当 sum + candidates[i] 大于 target 的时候不用进入循环
       for (let i = index; i < candidates.length; i++) {
         path.push(candidates[i])
         // 不用 i+1，表示可以重复读取当前的数
