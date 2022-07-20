@@ -38,6 +38,7 @@ function partition(s: string): string[][] {
     }
 
     for (let i = index; i < s.length; i++) {
+      // 从 index 处的字符开始，切割的长度依次递增
       const str = s.slice(index, i + 1)
       if (!isPalindrome(str)) {
         continue
