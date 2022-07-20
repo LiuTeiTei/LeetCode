@@ -388,6 +388,7 @@ void backtracking(参数) {
 - [trimSpace](https://github.com/LiuTeiTei/LeetCode/blob/master/Others/trimSpace.ts)
 - [28. Implement strStr](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/28_ImplementStrStr.ts)
 - [459. Repeated Substring Pattern](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/459_RepeatedSubstringPattern.ts)
+- [125. Valid Palindrome](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/125_valid-palindrome.ts)
 
 ### Medium
 
