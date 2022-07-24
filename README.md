@@ -434,10 +434,19 @@ void backtracking(参数) {
 
 ### Medium
 
+#### Combination
+
 - [77. Combinations](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/77_Combinations.ts)
 - [216. Combination Sum III](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/216_CombinationSumIII.ts)
 - [17. Letter Combinations of a Phone Number](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/17_LetterCombinationsOfAPhoneNumber.ts)
 - [39. Combination Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/39_combination-sum.ts)
 - [40. Combination Sum II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/40_combination-sum-ii-sum.ts)
+
+#### Partition
+
 - [131. Palindrome Partitioning](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/131_palindrome-partitioning.ts)
 - [93. Restore IP Addresses](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/93_restore-ip-addresses.ts)
+
+#### Subset
+
+- [78. Subsets](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/78_subsets.ts)
