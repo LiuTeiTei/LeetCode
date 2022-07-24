@@ -43,7 +43,7 @@ function restoreIpAddresses(s: string): string[] {
       return
     }
 
-    // 因为每一段 IP 最长只能是三位数，超过
+    // 因为每一段 IP 最长只能是三位数，超过做剪枝
     for (let i = index; i < s.length && i - index <= 3; i++) {
       const str = s.slice(index, i + 1)
       if (!isValidateIP(str)) {
