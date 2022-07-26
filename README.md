@@ -451,3 +451,4 @@ void backtracking(参数) {
 
 - [78. Subsets](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/78_subsets.ts)
 - [90. Subsets II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/90_subsets-ii.ts)
+- [491. Increasing Subsequences](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/491.increasing-subsequences.ts)
