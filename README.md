@@ -454,3 +454,4 @@ void backtracking(参数) {
 #### Permutation
 
 - [46. Permutations](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/46_permutations.ts)
+- [47. Permutations II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/47_permutations-ii.ts)
