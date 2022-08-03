@@ -455,3 +455,4 @@ void backtracking(参数) {
 
 - [46. Permutations](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/46_permutations.ts)
 - [47. Permutations II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/47_permutations-ii.ts)
+- [332. Reconstruct Itinerary](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/332_reconstruct-itinerary.ts)
