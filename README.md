@@ -264,7 +264,7 @@
 - 回溯法不是什么高效的算法，本质是穷举所有可能然后选出正确的答案，可以加一些剪枝操作提高效率，但改不了回溯法就是穷举的本质；
 - 回溯是递归的副产品，只要有递归就会有回溯。
 
-## 回溯算法模板
+### 回溯算法模板
 
 - 回溯法解决的问题都可以抽象为树形结构；
 - 因为回溯法解决的都是在集合中递归查找子集，集合的大小就构成了树的宽度，递归的深度，都构成的树的深度；
@@ -293,13 +293,24 @@ void backtracking(参数) {
   - for 循环就是遍历集合区间，可以理解一个节点有多少个孩子，这个 for 循环就执行多少次；
 - 一般来说，搜索叶子节点就是找的其中一个结果了
 
-## 回溯算法适用场景
+### 回溯算法适用场景
 
 - 组合问题：N 个数里面按一定规则找出 k 个数的集合；
 - 切割问题：一个字符串按一定规则有几种切割方式；
 - 子集问题：一个 N 个数的集合里有多少符合条件的子集；
 - 排列问题：N 个数按一定规则全排列，有几种排列方式；
 - 棋盘问题：N 皇后，解数独等等。
+
+## 贪心算法
+
+- 贪心的本质是选择每一阶段的局部最优，从而达到全局最优；
+
+### 贪心算法解题步骤
+
+- 将问题分解为若干个子问题；
+- 找出适合的贪心策略；
+- 求解每一个子问题的最优解；
+- 将局部最优解堆叠成全局最优解。
 
 # LeetCode
 
@@ -456,3 +467,9 @@ void backtracking(参数) {
 - [46. Permutations](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/46_permutations.ts)
 - [47. Permutations II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/47_permutations-ii.ts)
 - [332. Reconstruct Itinerary](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/332_reconstruct-itinerary.ts)
+
+## Greedy
+
+### Easy
+
+- [455. Assign Cookies](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/455_assign-cookies.ts)
