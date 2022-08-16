@@ -476,3 +476,4 @@ void backtracking(参数) {
 - [376. Wiggle Subsequence](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/376_wiggle-subsequence.ts)
 - [53. Maximum Subarray](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/53_maximum-subarray.ts)
 - [122. Best Time to Buy and Sell Stock II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/122_best-time-to-buy-and-sell-stock-ii.ts)
+- [55. Jump Game](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/55_jump-game.ts)
