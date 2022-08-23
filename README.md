@@ -473,6 +473,10 @@ void backtracking(参数) {
 ### Easy
 
 - [455. Assign Cookies](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/455_assign-cookies.ts)
+- [1005. Maximize Sum Of Array After K Negations](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/1005_maximize-sum-of-array-after-k-negations.ts)
+
+### Medium
+
 - [376. Wiggle Subsequence](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/376_wiggle-subsequence.ts)
 - [53. Maximum Subarray](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/53_maximum-subarray.ts)
 - [122. Best Time to Buy and Sell Stock II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/122_best-time-to-buy-and-sell-stock-ii.ts)
