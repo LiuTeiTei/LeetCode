@@ -483,3 +483,7 @@ void backtracking(参数) {
 - [55. Jump Game](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/55_jump-game.ts)
 - [45. Jump Game II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/45_jump-game-ii.ts)
 - [134. Gas Station](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/134_gas-station.ts)
+
+### Hard
+
+- [134. Gas Station](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/32_longest-valid-parentheses.ts)
