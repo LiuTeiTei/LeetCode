@@ -486,4 +486,4 @@ void backtracking(参数) {
 
 ### Hard
 
-- [134. Gas Station](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/32_longest-valid-parentheses.ts)
+- [32. Longest Valid Parentheses](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/32_longest-valid-parentheses.ts)
