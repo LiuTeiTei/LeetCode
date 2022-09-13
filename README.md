@@ -487,3 +487,4 @@ void backtracking(参数) {
 ### Hard
 
 - [32. Longest Valid Parentheses](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/32_longest-valid-parentheses.ts)
+- [135. Candy](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/135_candy.ts)
