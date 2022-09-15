@@ -474,6 +474,7 @@ void backtracking(参数) {
 
 - [455. Assign Cookies](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/455_assign-cookies.ts)
 - [1005. Maximize Sum Of Array After K Negations](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/1005_maximize-sum-of-array-after-k-negations.ts)
+- [860. Lemonade Change](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/860_lemonade-change.ts)
 
 ### Medium
 
