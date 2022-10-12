@@ -484,6 +484,7 @@ void backtracking(参数) {
 - [55. Jump Game](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/55_jump-game.ts)
 - [45. Jump Game II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/45_jump-game-ii.ts)
 - [134. Gas Station](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/134_gas-station.ts)
+- [406. Queue Reconstruction by Height](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/406_queue-reconstruction-by-height.ts)
 
 ### Hard
 
