@@ -312,6 +312,28 @@ void backtracking(参数) {
 - 求解每一个子问题的最优解；
 - 将局部最优解堆叠成全局最优解。
 
+## 动态规划
+
+Dynamic Programming
+
+- 动态规划中每一个状态一定是由上一个状态推导出来的，而贪心没有状态推导，从局部直接选最优。
+
+### 动态规划解题步骤
+
+- 确定 dp 数组（dp table）以及下标的含义；
+- 确定递推公式；
+- dp 数组如何初始化；
+- 确定遍历顺序；
+- 举例推导 dp 数组。
+
+### 动态规划适用场景
+
+- 基础题目；
+- 背包问题；
+- 打家劫舍；
+- 股票问题；
+- 子序列问题。
+
 # LeetCode
 
 ## Easy
@@ -443,7 +465,7 @@ void backtracking(参数) {
 
 ## Backtracking
 
-#### Combination
+### Combination
 
 - [77. Combinations](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/77_Combinations.ts)
 - [216. Combination Sum III](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/216_CombinationSumIII.ts)
@@ -451,18 +473,18 @@ void backtracking(参数) {
 - [39. Combination Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/39_combination-sum.ts)
 - [40. Combination Sum II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/40_combination-sum-ii-sum.ts)
 
-#### Partition
+### Partition
 
 - [131. Palindrome Partitioning](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/131_palindrome-partitioning.ts)
 - [93. Restore IP Addresses](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/93_restore-ip-addresses.ts)
 
-#### Subset
+### Subset
 
 - [78. Subsets](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/78_subsets.ts)
 - [90. Subsets II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/90_subsets-ii.ts)
 - [491. Increasing Subsequences](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/491.increasing-subsequences.ts)
 
-#### Permutation
+### Permutation
 
 - [46. Permutations](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/46_permutations.ts)
 - [47. Permutations II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/47_permutations-ii.ts)
@@ -492,3 +514,9 @@ void backtracking(参数) {
 
 - [32. Longest Valid Parentheses](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/32_longest-valid-parentheses.ts)
 - [135. Candy](https://github.com/LiuTeiTei/LeetCode/blob/master/Hard/135_candy.ts)
+
+## Dynamic Programming
+
+### Basic
+
+- [509. Fibonacci Number](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/509_fibonacci-number.ts)
