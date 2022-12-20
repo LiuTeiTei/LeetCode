@@ -520,3 +520,5 @@ Dynamic Programming
 ### Basic
 
 - [509. Fibonacci Number](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/509_fibonacci-number.ts)
+- [70. Climbing Stairs](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/70_climbing-stairs.ts)
+- [746. Min Cost Climbing Stairs](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/746_min-cost-climbing-stairs.ts)
