@@ -37,7 +37,9 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0062.%E4
 // 时间复杂度：O(m × n), 空间复杂度：O(m × n)
 {
   function uniquePaths(m: number, n: number): number {
-    const dp = new Array(m).fill(new Array(n).fill(1))
+    // !注意!: 当一个对象被传递给 fill 方法的时候，填充数组的是这个对象的引用。
+    // const dp = new Array(m).fill(new Array(n).fill(1))
+    const dp = new Array(m).fill(0).map(_ => Array(n).fill(1))
   
     // 初始化为 1
     /* for (let i = 0; i < m; i++) {
