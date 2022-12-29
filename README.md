@@ -527,3 +527,4 @@ Dynamic Programming
 
 - [62. Unique Paths](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/62_unique-paths.ts)
 - [63. Unique Paths II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/63_unique-paths-ii.ts)
+- [343. Integer Break](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/343_integer-break.ts)
