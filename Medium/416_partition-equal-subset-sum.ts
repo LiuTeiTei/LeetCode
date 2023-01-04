@@ -51,31 +51,67 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0416.%E5
 
 // 转换成 01背包 问题，二维数组
 // 时间复杂度：O(n^2), 空间复杂度：O(n^2)
+{
+  function canPartition(nums: number[]): boolean {
+    const sum = nums.reduce((prev, curr) => prev + curr, 0)
+    if (sum % 2 === 1) return false
+  
+    const target = sum / 2
+  
+    // dp[i][j] 表示从下标为 [0-i] 的物品里任意取，放进容量为 j 的背包，价值总和最大是多少
+    const dp: number[][] = new Array(nums.length).fill(0).map(() => new Array(target + 1).fill(0))
+  
+    // 初始化 dp 数组
+    for (let j = nums[0]; j <= target; j++) {
+      dp[0][j] = nums[0]
+    }
+  
+    // 遍历 dp 数组
+    for (let i = 1; i < nums.length; i++) {
+      for (let j = 1; j <= target; j++) {
+        dp[i][j] = j - nums[i] >= 0 ? Math.max(dp[i - 1][j], dp[i - 1][j - nums[i]] + nums[i]) : dp[i - 1][j]
+      }
+    }
+  
+    return dp[nums.length - 1][target] === target
+  };
+}
+
+// 转换成 01背包 问题，一维数组
+// 时间复杂度：O(n^2), 空间复杂度：O(n)
 function canPartition(nums: number[]): boolean {
   const sum = nums.reduce((prev, curr) => prev + curr, 0)
   if (sum % 2 === 1) return false
 
   const target = sum / 2
 
-  // dp[i][j] 表示从下标为 [0-i] 的物品里任意取，放进容量为 j 的背包，价值总和最大是多少
-  const dp = new Array(nums.length).fill(0).map(() => new Array(target + 1).fill(0))
+  // dp[j] 表示容量为 j 的背包，所背的物品价值可以最大为 dp[j]
+  const dp: number[] = new Array(target + 1).fill(0)
 
   // 初始化 dp 数组
   for (let j = nums[0]; j <= target; j++) {
-    dp[0][j] = nums[0]
+    dp[j] = nums[0]
   }
 
   // 遍历 dp 数组
   for (let i = 1; i < nums.length; i++) {
-    for (let j = 0; j <= target; j++) {
-      dp[i][j] = j - nums[i] >= 0 ? Math.max(dp[i - 1][j], dp[i - 1][j - nums[i]] + nums[i]) : dp[i - 1][j]
+    /* 
+    一定要是倒序遍历，正序遍历可能会出现物品 i 被重复加入背包多次，
+    二维：Math.max (dp[i - 1][j], dp[i - 1][j - nums[i]] + nums[i]) 中降到一维的时候，
+    需要保证 dp[i - 1][*] --> dp[j - nums[i]] 对应的值是 i-1 时的值，
+    如果是正序遍历就被当前 i 的值覆盖了，
+    例如 [1,2,5] 这个例子。
+    */
+    for (let j = target; j >= nums[i]; j--) {
+      dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i])
     }
   }
 
-  return dp[nums.length - 1][target] === target
+  return dp[target] === target
 };
 
+const test0 = canPartition([1,2,5])
 const test1 = canPartition([1,5,11,5])
 const test2 = canPartition([2,2,1,1])
 const test3 = canPartition([1,2,3,5])
-console.log(test1, test2, test3)
+console.log(test0, test1, test2, test3)
