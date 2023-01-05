@@ -530,3 +530,4 @@ Dynamic Programming
 ### Knapsack
 
 - [416. Partition Equal Subset Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/416_partition-equal-subset-sum.ts)
+- [1049. Last Stone Weight II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/1049_last-stone-weight-ii.ts)
