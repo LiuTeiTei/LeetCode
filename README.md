@@ -61,21 +61,21 @@
       traversal(currTree.left, result)
       traversal(currTree.right, result)
     }
-
+  
     const result: number[] = []
     traversal(root, result)
     return result
   };
-
+  
   // 迭代方法
   function preorderTraversal(root: TreeNode | null): number[] {
     if (root === null) return []
-
+  
     const result: number[] = []
     const treeStack: TreeNode[] = []
     let currTree = root
     treeStack.push(root)
-
+  
     // 抛出中间节点，压入右节点，再压入左节点，如此循环
     while(treeStack.length > 0) {
       currTree = treeStack.pop()!
@@ -83,7 +83,7 @@
       if (currTree.right !== null) treeStack.push(currTree.right)
       if (currTree.left !== null) treeStack.push(currTree.left)
     }
-
+  
     return result
   };
   ```
@@ -103,20 +103,20 @@
       result.push(currTree.val)
       traversal(currTree.right, result)
     }
-
+  
     const result: number[] = []
     traversal(root, result)
     return result
   };
-
+  
   // 迭代方法
   function inorderTraversal(root: TreeNode | null): number[] {
     if (root === null) return []
-
+  
     const result: number[] = []
     const treeStack: TreeNode[] = []
     let currTree: TreeNode | null = root
-
+  
     // 压入左节点直到左叶子，抛出左叶子，抛出中间节点，压入右节点，继续压入左节点直到左叶子......
     while(currTree !== null || treeStack.length > 0) {
       if (currTree !== null) {
@@ -128,7 +128,7 @@
         currTree = currTree.right
       }
     }
-
+  
     return result
   };
   ```
@@ -148,21 +148,21 @@
       traversal(currTree.right, result)
       result.push(currTree.val)
     }
-
+  
     const result: number[] = []
     traversal(root, result)
     return result
   };
-
+  
   // 迭代方法
   function postorderTraversal(root: TreeNode | null): number[] {
     if (root === null) return []
-
+  
     const result: number[] = []
     const treeStack: TreeNode[] = []
     let currTree = root
     treeStack.push(root)
-
+  
     // 前序遍历（中左右）==》调整为（中右左）==》反转就是后序遍历（左右中）
     while(treeStack.length > 0) {
       currTree = treeStack.pop()!
@@ -170,7 +170,7 @@
       if (currTree.left !== null) treeStack.push(currTree.left)
       if (currTree.right !== null) treeStack.push(currTree.right)
     }
-
+  
     return result.reverse()
   };
   ```
@@ -196,7 +196,7 @@
     const queue: TreeNode[] = []
     const result: number[][] = []
     queue.push(root)
-
+    
     while(queue.length > 0) {
       const rank = queue.length
       const tempResult: number[] = []
@@ -212,7 +212,7 @@
       }
       result.push(tempResult)
     }
-
+    
     return result
   };
   ```
@@ -247,7 +247,7 @@
   class Node {
     val: number;
     children: Node[];
-
+  
     constructor(val?: number, children?: Node[]) {
       this.val = val ?? 0;
       this.children = children ?? [];
@@ -329,7 +329,9 @@ Dynamic Programming
 ### 动态规划适用场景
 
 - 基础题目；
-- 背包问题；
+- 背包问题：01 背包、完全背包、多重背包；
+  - <img src='images/背包问题.png' alt='背包问题' />
+
 - 打家劫舍；
 - 股票问题；
 - 子序列问题。
@@ -532,3 +534,4 @@ Dynamic Programming
 - [416. Partition Equal Subset Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/416_partition-equal-subset-sum.ts)
 - [1049. Last Stone Weight II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/1049_last-stone-weight-ii.ts)
 - [494. Target Sum](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/494_target-sum.ts)
+- [474. Ones and Zeroes](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/474_ones-and-zeroes.ts)

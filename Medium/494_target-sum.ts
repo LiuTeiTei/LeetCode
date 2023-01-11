@@ -116,7 +116,7 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0494.%E7
 }
 
 // 终极简化: 时间复杂度：O(n * len), 空间复杂度：O(len), len = (sum + target) / 2 + 1
-// dp[j] 表示填满 j 这么大容积的包，有 dp[j] 种方法，j 表示计算后的 target，且前面的值是不满足 dp[j] 的定义的。
+// dp[j] 表示填满 j 这么大容积的包，有 dp[j] 种方法，j 表示计算后的 target，target = 2 * j - sum，且前面的值是不满足 dp[j] 的定义的。
 const findTargetSumWays = (nums, target) => {
   const sum = nums.reduce((prev, curr) => prev + curr, 0)
   const size = (sum + target) / 2
