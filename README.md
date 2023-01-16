@@ -542,5 +542,6 @@ Dynamic Programming
 #### CompletePack
 
 - [518. Coin Change II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/518_coin-change-ii.ts)
+- [377. Combination Sum IV](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/377_combination-sum-iv.ts)
 
 #### MultiplePack
