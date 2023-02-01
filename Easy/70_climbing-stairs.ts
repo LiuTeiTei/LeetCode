@@ -27,15 +27,39 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0070.%E7
 */
 
 // 第一层楼梯再跨两步就到第三层，第二层楼梯再跨一步就到第三层 =》转换成 斐波那契数列
-function climbStairs(n: number): number {
-  let dp1 = 1
-  let dp2 = 2
+{
+  function climbStairs(n: number): number {
+    let dp1 = 1
+    let dp2 = 2
+  
+    for (let i = 3; i <= n; i++) {
+      const dp3 = dp1 + dp2
+      dp1 = dp2
+      dp2 = dp3
+    }
+  
+    return n < 3 ? n : dp2
+  };
+}
 
-  for (let i = 3; i <= n; i++) {
-    const dp3 = dp1 + dp2
-    dp1 = dp2
-    dp2 = dp3
+// 完全背包思想，一步一个台阶，两个台阶，三个台阶，直到 m 个台阶，有多少种不同的方法可以爬到楼顶
+function climbStairs(n: number): number {
+  const m = 2
+
+  // dp[i]: 爬到有 i 个台阶的楼顶，有 dp[i] 种方法。
+  const dp: number[] = new Array(n + 1).fill(0)
+
+  // 初始化
+  dp[0] = 1
+
+  // 可以重复 -》完全背包，求的是排列数 -》先遍历背包后遍历物品
+  for (let j = 1; j < n + 1; j++) {
+    for (let i = 1; i <= m; i++) {
+      if (j - i >= 0) {
+        dp[j] = dp[j] + dp[j - i]
+      }
+    }
   }
 
-  return n < 3 ? n : dp2
+  return dp[n]
 };
