@@ -544,6 +544,7 @@ Dynamic Programming
 - [518. Coin Change II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/518_coin-change-ii.ts)
 - [377. Combination Sum IV](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/377_combination-sum-iv.ts)
 - [70. Climbing Stairs](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/70_climbing-stairs.ts)
-- [322. Coin Change](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/322_coin-change)
+- [322. Coin Change](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/322_coin-change.ts)
+- [279. Perfect Squares](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/279_perfect-squares.ts)
 
 #### MultiplePack
