@@ -546,5 +546,6 @@ Dynamic Programming
 - [70. Climbing Stairs](https://github.com/LiuTeiTei/LeetCode/blob/master/Easy/70_climbing-stairs.ts)
 - [322. Coin Change](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/322_coin-change.ts)
 - [279. Perfect Squares](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/279_perfect-squares.ts)
+- [139. Word Break](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/139_word-break.ts)
 
 #### MultiplePack
