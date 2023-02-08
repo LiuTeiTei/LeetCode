@@ -548,4 +548,7 @@ Dynamic Programming
 - [279. Perfect Squares](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/279_perfect-squares.ts)
 - [139. Word Break](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/139_word-break.ts)
 
-#### MultiplePack
+#### HouseRobber
+
+- [139. House Robber](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/198_house-robber.ts)
+- [213. House Robber II](https://github.com/LiuTeiTei/LeetCode/blob/master/Medium/213.house-robber-ii.ts)
