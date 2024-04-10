@@ -69,25 +69,20 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0001.%E4
 // 哈希表，遍历数组的时候，存入 key 为值，value 为索引的 Map
 // Runtime: 117 ms, faster than 60.34%，Memory Usage: 45.1 MB, less than 37.90%
 function twoSum(nums: number[], target: number): number[] {
-  let helperMap: Map<number, number> = new Map();
-  let index: number | undefined;
-  let resArr: number[] = [];
+  const helperMap: Map<number, number> = new Map();
 
   for (let i = 0, length = nums.length; i < length; i++) {
-    index = helperMap.get(target - nums[i]);
+    const index = helperMap.get(target - nums[i]);
     
     // 判断旧的 Map 中是否存在 target - nums[i] 的值
     if (index !== undefined) {
-      resArr = [i, index];
       // 存在的话直接返回
-      return resArr;
+      return [i, index];
     }
 
     // 不存在的话更新 Map
     helperMap.set(nums[i], i);
   }
-
-  return resArr;
 };
 
 console.log(twoSum([3, 2, 4], 6))
