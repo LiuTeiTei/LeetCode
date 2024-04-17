@@ -1,5 +1,5 @@
 /* 
-https://leetcode.com/problems/two-sum/
+https://leetcode.com/problems/two-sum
 https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.md
 
 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
