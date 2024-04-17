@@ -34,67 +34,42 @@ s 由英文字母、数字、符号和空格组成
  */
 
 // 滑动窗口
-// 左右两个指针，分别指向 0、1 元素，右指针不断右移直到发现重复的字符，此时左指针右移一个并且右指针重置到左指针的右边一个。
-// O(n^3)   Runtime:488 ms   Memory:46 MB
+// 左右两个指针，分别指向 0、1 元素，右指针不断右移直到发现重复的字符，此时左指针右移一个，左右指针相遇时右指针右移一个。
+// 时间复杂度：O(n) 左指针和右指针分别会遍历整个字符串一次。
+// 空间复杂度：O(∣Σ∣)，其中 ∣Σ∣ 表示字符集。我们需要用到哈希集合来存储出现过的字符，可以默认为所有在 [0,128) 内的 ASCII 码，即 ∣Σ∣=128。
 {
   function lengthOfLongestSubstring(s: string): number {
-    if (s.length < 2) return s.length;
+    if (s.length <= 1) return s.length
   
-    let max = 1;
-    let arr: string[];
+    let leftP = 0
+    let rightP = 1
+    let result = 1
+    const arr = s.split('')
+    const map = new Map<string, boolean>()
+    map.set(arr[leftP], true)
   
-    for (let i = 0; i < s.length; i++) {
-      arr = [s[i]];
-      for (let j = i + 1; j < s.length; j++) {
-        const isRepeated = arr.indexOf(s[j]) > -1;
-  
-        if (isRepeated) {
-          arr = [];
-          break
+    while (rightP < s.length) {
+      if (leftP === rightP) {
+        map.set(arr[rightP], true)
+        rightP = rightP + 1
+      } else {
+        if (!map.has(arr[rightP])) {
+          map.set(arr[rightP], true)
+          rightP = rightP + 1
+          result = rightP - leftP > result ? rightP - leftP : result
         } else {
-          arr.push(s[j]);
-          max = Math.max(max, arr.length);
+          map.delete(arr[leftP])
+          leftP = leftP + 1
         }
       }
+  
     }
   
-    return max;
+    return result
   };
 }
 
 // 滑动窗口
-// 查找是否相同优化
-// O(n^2)   Runtime:104 ms   Memory:44 MB
-{
-  function lengthOfLongestSubstring(s: string): number {
-    // 哈希集合，记录每个字符是否出现过
-    const stringSet = new Set();
-    // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
-    let rightP = -1;
-    let max = 0;
-    let n = s.length;
-
-    for (let i = 0; i < n; i++) {
-      if (i !== 0) {
-        // 左指针向右移动一格，移除一个字符
-        stringSet.delete(s.charAt(i - 1));
-      }
-
-      while (rightP + 1 < n && !stringSet.has(s.charAt(rightP + 1))) {
-        // 不断地移动右指针
-        stringSet.add(s.charAt(rightP + 1));
-        ++rightP;
-      }
-
-      // 第 i 到 rk 个字符是一个极长的无重复字符子串
-      max = Math.max(max, rightP - i + 1);
-    }
-  
-    return max;
-  };
-}
-
-// Runtime:96 ms   Memory:41.4 MB
 // 利用 utf 巧妙的记录下字符出现的上个位置，遇到重复的字符就从该字符的下一个字符开始
 interface Array<T> {
   fill(value: T): Array<T>;
