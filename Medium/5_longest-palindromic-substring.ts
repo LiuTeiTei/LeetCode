@@ -19,6 +19,9 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0005.%E6
 s 仅由数字和英文字母组成
 */
 
+// 动态规划
+// 时间复杂度：O(n^2)，空间复杂度：O(n^2)
+
 // 双指针：找中心然后向两边扩散看是不是对称。注意：中心点可以是一个元素，也可以是两个相同的元素。
 // 时间复杂度：O(n^2)，空间复杂度：O(1)
 function longestPalindrome(s: string): string {
