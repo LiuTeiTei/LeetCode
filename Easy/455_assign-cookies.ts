@@ -32,24 +32,26 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0455.%E5
 1 <= g[i], s[j] <= 231 - 1
 */
 
-
-// 局部最优是大饼干喂给胃口大的
-// 全局最优是喂饱尽可能多的小孩
+// 贪心算法：局部最优是大饼干喂给胃口大的（小饼干喂给胃口小的），全局最优是喂饱尽可能多的小孩
 function findContentChildren(g: number[], s: number[]): number {
   g.sort((a, b) => a - b)
   s.sort((a, b) => a - b)
 
   let result = 0
-  let sIndex = s.length - 1
+  let gIndex = 0
+  let sIndex = 0
 
-  for (let i = g.length - 1; i >= 0; i--) {
-    if (sIndex >= 0 && s[sIndex] >= g[i]) {
-      sIndex--
+  // 小饼干喂给胃口小的
+  while(gIndex < g.length && sIndex < s.length) {
+    if (g[gIndex] <= s[sIndex]) {
       result++
+      gIndex++
+      sIndex++
+    } else {
+      sIndex++
     }
   }
 
   return result
 };
 
-console.log(findContentChildren([1,2,3], [1,1]))
