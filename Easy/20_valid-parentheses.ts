@@ -33,30 +33,26 @@ s 仅由括号 '()[]{}' 组成
 */
 
 // 维持一个 stack，左括号 push，右括号 pop，同时比较 pop 出的值是不是一对。
+// 时间复杂度 O(n)，空间复杂度 O(n)
 function isValid(s: string): boolean {
-  if (s.length === 0) return true
+  const bracketsMap = new Map<string, string>([
+      [')', '('],
+      ['}', '{'],
+      [']', '['],
+  ])
 
-  const bracketsMap: Record<string, string> = {
-    '(': ')',
-    '[': ']',
-    '{': '}'
-  }
   const stack: string[] = []
-
   for (let i = 0; i < s.length; i++) {
-    const value = s[i]
-    if (bracketsMap.hasOwnProperty(value)) {
-      stack.push(value)
-    } else {
-      const right = stack.pop()
-      if (!right || value !== bracketsMap[right]) {
-        return false
+      if (!bracketsMap.has(s[i])) {
+          // 左括号进栈
+          stack.push(s[i])
+      } else {
+          // 右括号出栈
+          if (bracketsMap.get(s[i]) !== stack.pop()) {
+              return false
+          }
       }
-    }
   }
 
-  return stack.length === 0
+  return !stack.length
 };
-
-console.log(isValid('()[]{}'))
-console.log(isValid('([)]'))
