@@ -34,61 +34,54 @@ candidate 中的每个元素都 互不相同
 1 <= target <= 500
 */
 
-{
-  function combinationSum(candidates: number[], target: number): number[][] {
-    const result: number[][] = []
-    const path: number[] = []
-  
-    const backtracking = (index: number, sum: number) => {
-      if (sum === target) {
-        result.push(path.slice())
-        return
-      }
-      if (sum > target) {
-        return
-      }
-  
-      for (let i = index; i < candidates.length; i++) {
-        path.push(candidates[i])
-        // 不用 i+1，表示可以重复读取当前的数
-        backtracking(i, sum + candidates[i])
-        // 回溯
-        path.pop()
-      }
-  
-    }
-  
-    backtracking(0, 0)
-    return result
-  };
-}
-
-// 剪枝优化
-// candidates 从小到大排列时，当 sum + candidates[i] 大于 target 的时候不用进入循环
+// 回溯算法
+// 时间复杂度: O(n * 2^n) 空间复杂度: O(target)
 function combinationSum(candidates: number[], target: number): number[][] {
-  const result: number[][] = []
-  const path: number[] = []
-
-  const backtracking = (index: number, sum: number) => {
-    // 进入循环时提前判断了 sum > target 的场景
-    if (sum === target) {
-      result.push(path.slice())
-      return
-    }
-
-    
-    for (let i = index; i < candidates.length && sum + candidates[i] <= target; i++) {
-      path.push(candidates[i])
-      backtracking(i, sum + candidates[i])
-      path.pop()
-    }
-
+  const backtracking = (index: number, sum: number, path: number[], result: number[][]) => {
+      if (sum > target) {
+          return
+      }
+      if (sum === target) {
+          result.push(path.slice())
+          return
+      }
+      for (let i = index; i < candidates.length; i++) {
+          sum = sum + candidates[i]
+          path.push(candidates[i])
+          backtracking(i, sum, path, result,)
+          sum = sum - candidates[i]
+          path.pop()
+      }
   }
-
-  // 需要按照从小到达排序
-  candidates.sort((a, b) => a - b)
-  backtracking(0, 0)
+  
+  const result = []
+  backtracking(0, 0, [], result)
   return result
 };
 
-console.log([2,3,6,7], 7)
+// 回溯算法-剪枝优化
+// candidates 从小到大排列时，当 sum + candidates[i] 大于 target 的时候不用进入循环
+// 时间复杂度: O(n * 2^n) 空间复杂度: O(target)
+function combinationSum(candidates: number[], target: number): number[][] {
+  const backtracking = (index: number, sum: number, path: number[], result: number[][]) => {
+      // 进入循环时提前判断了 sum > target 的场景
+      if (sum === target) {
+          result.push(path.slice())
+          return
+      }
+      // sum > target 时不需要再遍历了
+      for (let i = index; i < candidates.length && sum + candidates[i] <= target; i++) {
+          sum = sum + candidates[i]
+          path.push(candidates[i])
+          backtracking(i, sum, path, result,)
+          sum = sum - candidates[i]
+          path.pop()
+      }
+  }
+  
+  // 优化的前提是 candidates 升序排列
+  candidates.sort((a, b) => a - b)
+  const result = []
+  backtracking(0, 0, [], result)
+  return result
+};
