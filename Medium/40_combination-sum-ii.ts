@@ -30,34 +30,33 @@ candidates 中的每个数字在每个组合中只能使用 一次 。
 1 <= target <= 30
 */
 
+// 回溯算法
+// 时间复杂度: O(n * 2^n) 空间复杂度: O(n)
 function combinationSum2(candidates: number[], target: number): number[][] {
-  const result: number[][] = []
-  const path: number[] = []
-
-  const backtracking = (index: number, sum: number) => {
-    if (sum === target) {
-      result.push(path.slice())
-      return
-    }
-    if (sum > target) {
-      return
-    }
-
-    // 剪枝优化，需要先排序：
-    for (let i = index; i < candidates.length && sum + candidates[i] <= target; i++) {
-      // 去重，同一树枝上（纵向遍历）可以重复，同一树层上（横向遍历）不能重复
-      if (i > index && candidates[i] === candidates[i - 1]) {
-        continue;
+  const backtracking = (index: number, sum: number, path: number[], result: number[][]) => {
+      if (sum > target) return
+      if (sum === target) {
+          result.push(path.slice())
+          return
       }
-      path.push(candidates[i])
-      backtracking(i + 1, sum + candidates[i])
-      path.pop()
-    }
+      // 剪枝优化：sum + candidates[i] <= target
+      for (let i = index; i < candidates.length && sum + candidates[i] <= target; i++) {
+          // 对同一树层使用过的元素进行跳过
+          if (i > index && candidates[i] == candidates[i - 1]) {
+              continue;
+          }
+          sum = sum + candidates[i]
+          path.push(candidates[i])
+          backtracking(i + 1, sum, path, result)
+          sum = sum - candidates[i]
+          path.pop()
+      }
   }
 
+  // 需要先对 candidates 进行排序处理
   candidates.sort((a, b) => a - b)
-  backtracking(0, 0)
+
+  const result: number[][] = []
+  backtracking(0, 0, [], result)
   return result
 };
-
-console.log(combinationSum2([2,2,2,2], 2))
