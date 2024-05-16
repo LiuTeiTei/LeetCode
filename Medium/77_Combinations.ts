@@ -26,55 +26,24 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0077.%E7
 1 <= k <= n
 */
 
-{
-  function combine(n: number, k: number): number[][] {
-    // 初始化某一次结果
-    const path: number[] = []
-    // 初始化最终结果
-    const result: number[][] = []
-  
-    // 定义循环函数，for 循环用来横向遍历（n），递归的过程是纵向遍历（k）
-    const getPath = (startIndex: number) => {
-      // 定义单次循环的终止条件
-      if (path.length === k) {
-        result.push(path.slice())
-        return
-      }
-  
-      for (let i = startIndex; i <= n; i++) {
-        path.push(i)
-        getPath(i + 1)
-        path.pop()  // 回溯，撤销处理的节点
-      }
-    }
-  
-    getPath(1)
-    return result
-  };
-}
-
-// 剪枝优化
+// 回溯算法 - 剪枝优化：path.length + n - index + 1 >= k
+// 时间复杂度: O(n * 2^n) 空间复杂度: O(n + k)
 function combine(n: number, k: number): number[][] {
-  const path: number[] = []
-  const result: number[][] = []
-
-  const getPath = (startIndex: number) => {
-    if (path.length === k) {
-      result.push(path.slice())
-      return
-    }
-
-    // 如果 for 循环选择的起始位置之后的元素个数已经不足我们需要的元素个数了，那么就没有必要搜索了
-    // 在集合 n 中至多要从 n - (k - path.length()) + 1，开始遍历
-    for (let i = startIndex; i <= n - (k - path.length) + 1; i++) {
-      path.push(i)
-      getPath(i + 1)
-      path.pop()
-    }
+  const backtracking = (index: number, path: number[], result: number[][]) => {
+      if (path.length >= k) {
+          result.push(path.slice())
+          return
+      }
+      for (let i = index; i <= n && path.length + n - index + 1 >= k; i++) {
+          path.push(i)
+          // 递归：控制树的纵向遍历，i + 1 防止出现重复的组合
+          backtracking(i + 1, path, result)
+          // 回溯，撤销处理的节点
+          path.pop()
+      }
   }
 
-  getPath(1)
+  const result: number[][] = []
+  backtracking(1, [], result)
   return result
 };
-
-console.log(combine(3, 2))
