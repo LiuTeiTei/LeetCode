@@ -35,29 +35,29 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0216.%E7
 1 <= n <= 60
 */
 
+// 回溯算法
+// 时间复杂度: O(n * 2^n) 空间复杂度: O(n)
 function combinationSum3(k: number, n: number): number[][] {
-  const result: number[][] = []
-  const path: number[] = []
-
-  // 通过传入 sum，就可以不用回溯 sum 了
-  const backtracking = (startValue: number, sum: number) => {
-    if (sum === n && path.length === k) {
-      result.push(path.slice())
-    }
-
-    // 剪枝优化：已选元素总和如果已经大于 n 了，那么往后遍历就没有意义了，直接剪掉
-    if (sum > n || path.length > k) return
-
-    // 剪枝优化：从 9 - (k - path.length()) + 2 开始的数，不满足总数 k，直接剪掉
-    for (let i = startValue; i <= 9 - (k - path.length) + 1; i++) {
-      path.push(i)
-      backtracking(i + 1, sum + i)
-      path.pop()
-    }
+  const backtracking = (index: number, sum: number, path: number[], result: number[][]) => {
+      if (sum > n) return
+      if (sum === n && path.length === k) {
+          result.push(path.slice())
+          return
+      }
+      for (let i = index; i <= 9; i++) {
+          // 剪枝优化
+          if (sum + i > n || path.length + i - index + 1 >= n) {
+              continue
+          }
+          sum = sum + i
+          path.push(i)
+          backtracking(i + 1, sum, path, result)
+          sum = sum - i
+          path.pop()
+      }
   }
 
-  backtracking(1, 0)
+  const result:number[][] = []
+  backtracking(1, 0, [], result)
   return result
 };
-
-console.log(combinationSum3(3, 9))
