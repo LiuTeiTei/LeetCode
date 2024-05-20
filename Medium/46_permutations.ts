@@ -23,29 +23,29 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0046.%E5
 nums 中的所有整数 互不相同
 */
 
+// 回溯法，哈希表记录使用过的值
+// 时间复杂度: O(n×n!) 空间复杂度: O(n)
 function permute(nums: number[]): number[][] {
-  const result: number[][] = []
-  const path: number[] = []
-
-  const backtracking = (used: boolean[]) => {
-    if (path.length === nums.length) {
-      result.push(path.slice())
-      return
-    }
-
-    for(let i = 0; i < nums.length; i++) {
-      if (used[i] === true) {
-        continue
+  const backtracking = (path: number[], result: number[][]) => {
+      if (path.length === nums.length) {
+          result.push(path.slice())
+          return
       }
 
-      used[i] = true
-      path.push(nums[i])
-      backtracking(used)
-      path.pop()
-      used[i] = false
-    }
+      for (let i = 0; i < nums.length; i++) {
+          if (usedMap.get(nums[i])) {
+              continue
+          }
+          path.push(nums[i])
+          usedMap.set(nums[i], true)
+          backtracking(path, result)
+          path.pop()
+          usedMap.set(nums[i], false)
+      }
   }
 
-  backtracking(new Array(nums.length).fill(false))
+  const usedMap = new Map<number, boolean>()
+  const result: number[][] = []
+  backtracking([], result)
   return result
 };
