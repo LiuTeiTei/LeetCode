@@ -31,12 +31,12 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0746.%E4
 0 <= cost[i] <= 999
 */
 
+// 动态规划 --> 第 n 阶的花费 = min(第 n - 1 阶爬 1 个台阶 + cost[n - 1], 第 n - 2 阶爬 2 个台阶 + cost[n - 2])
 function minCostClimbingStairs(cost: number[]): number {
-  const dp: number[] = []
-  dp[0] = 0
-  dp[1] = 0
+  if (cost.length <= 1) return 0
 
-  for (let i = 2; i <= cost.length; i++) {
+  const dp: number[] = [0, 0]
+  for (let i = 2; i <= cost.length + 1; i++) {
     // 有两个途径得到 dp[i]，一个是 dp[i-1] 一个是 dp[i-2]
     // dp[i - 1] 跳到 dp[i] 需要花费 dp[i - 1] + cost[i - 1]
     // dp[i - 2] 跳到 dp[i] 需要花费 dp[i - 2] + cost[i - 2]
@@ -45,6 +45,3 @@ function minCostClimbingStairs(cost: number[]): number {
 
   return dp[cost.length]
 };
-
-console.log(minCostClimbingStairs([0,0,0,1]))
-console.log(minCostClimbingStairs([0,0,1,1]))
