@@ -26,21 +26,21 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0070.%E7
 1 <= n <= 45
 */
 
-// 第一层楼梯再跨两步就到第三层，第二层楼梯再跨一步就到第三层 =》转换成 斐波那契数列
-{
-  function climbStairs(n: number): number {
-    let dp1 = 1
-    let dp2 = 2
-  
-    for (let i = 3; i <= n; i++) {
-      const dp3 = dp1 + dp2
-      dp1 = dp2
-      dp2 = dp3
-    }
-  
-    return n < 3 ? n : dp2
-  };
-}
+// 动态规划 --> 第 n 阶的爬法 = 第 n - 1 阶的爬法 & 爬 1 个台阶 + 第 n - 2 阶的爬法 & 爬 2 个台阶
+// 转为「509 斐波那契数」题目
+// 时间复杂度：O(n), 空间复杂度：O(1)
+function climbStairs(n: number): number {
+  const dp: [number, number, number] = [0, 1, 2]
+  if(n <= 2) return dp[n]
+
+  for (let i = 3; i <= n; i++) {
+    const sum = dp[1] + dp[2]
+    dp[1] = dp[2]
+    dp[2] = sum
+  }
+
+  return dp[2]
+};
 
 // 完全背包思想，一步一个台阶，两个台阶，三个台阶，直到 m 个台阶，有多少种不同的方法可以爬到楼顶
 function climbStairs(n: number): number {
