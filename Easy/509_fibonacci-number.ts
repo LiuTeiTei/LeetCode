@@ -30,34 +30,32 @@ F(n) = F(n - 1) + F(n - 2)，其中 n > 1
 */
 
 // 动态规划
+// dp[i]的定义为: 第i个数的斐波那契数值是dp[i]
+// 状态转移方程为: dp[i] = dp[i - 1] + dp[i - 2]
 // 时间复杂度：O(n), 空间复杂度：O(n)
-{
-  function fib(n: number): number {
-    const dp: number[] = [0, 1]
-  
-    for (let i = 2; i <= n; i++) {
-      dp[i] = dp[i - 1] + dp[i - 2]
-    }
-  
-    return dp[n]
+function fib(n: number): number {
+  const dp: number[] = [0, 1]
+
+  for (let i = 2; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2]
   }
+
+  return dp[n]
 }
 
 // 动态规划
 // 时间复杂度：O(n), 空间复杂度：O(1)
-{
-  function fib(n: number): number {
-    let dp0 = 0
-    let dp1 = 1
-  
-    for (let i = 2; i <= n; i++) {
-      const sum = dp0 + dp1
-      dp0 = dp1
-      dp1 = sum
-    }
-  
-    return n === 0 ? n : dp1
+function fib(n: number): number {
+  let dp0 = 0
+  let dp1 = 1
+
+  for (let i = 2; i <= n; i++) {
+    const sum = dp0 + dp1
+    dp0 = dp1
+    dp1 = sum
   }
+
+  return n === 0 ? n : dp1
 }
 
 // 递归解法
