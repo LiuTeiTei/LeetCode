@@ -27,28 +27,58 @@ n == obstacleGrid[i].length
 obstacleGrid[i][j] 为 0 或 1
 */
 
+// 动态规划
+// 到达 [m, n] 的路径数等于 (左边没有障碍物 & [m - 1, n]) + (上面没有障碍物 & [m, n - 1])
+// 时间复杂度：O(m * n), 空间复杂度：O(m * n)
 function uniquePathsWithObstacles(obstacleGrid: number[][]): number {
   const m = obstacleGrid.length
   const n = obstacleGrid[0].length
 
   if (obstacleGrid[m - 1][n - 1] == 1 || obstacleGrid[0][0] == 1) return 0
 
-  const dp = new Array(m).fill(0).map(_ => Array(n).fill(0))
+  const dp: number[][] = new Array(m).fill(0).map(_ => new Array(n).fill(0))
 
-  for (let i = 0; i < m && obstacleGrid[i][0] === 0; i++) {
-    dp[i][0] = 1
-  }
-  for (let j = 0; j < n && obstacleGrid[0][j] === 0; j++) {
-    dp[0][j] = 1
-  }
-  for (let i = 1; i < m; i++) {
-    for (let j = 1; j < n; j++) {
-      if (obstacleGrid[i][j] === 1) continue
-      dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (i === 0 && j === 0) {
+        dp[i][j] = 1
+      } else if (i === 0) {
+        dp[i][j] = obstacleGrid[i][j] ? 0 : dp[i][j - 1]
+      } else if (j === 0) {
+        dp[i][j] = obstacleGrid[i][j] ? 0 : dp[i - 1][j]
+      } else {
+        dp[i][j] = obstacleGrid[i][j] ? 0 : dp[i - 1][j] + dp[i][j - 1]
+      }
     }
   }
 
   return dp[m - 1][n - 1]
 };
 
-uniquePathsWithObstacles([[0,0,0],[0,1,0],[0,0,0]])
+// 动态规划
+// 用 滚动数组 代替二阶矩阵
+// 时间复杂度：O(m * n), 空间复杂度：O(m)
+function uniquePathsWithObstacles(obstacleGrid: number[][]): number {
+  const m = obstacleGrid.length
+  const n = obstacleGrid[0].length
+
+  if (obstacleGrid[m - 1][n - 1] == 1 || obstacleGrid[0][0] == 1) return 0
+
+  const dp: number[] = new Array(n).fill(0)
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (i === 0 && j === 0) {
+        dp[j] = 1
+      } else if (i === 0) {
+        dp[j] = obstacleGrid[i][j] ? 0 : dp[j - 1]
+      } else if (j === 0) {
+        dp[j] = obstacleGrid[i][j] ? 0 : dp[j]
+      } else {
+        dp[j] = obstacleGrid[i][j] ? 0 : dp[j] + dp[j - 1]
+      }
+    }
+  }
+
+  return dp[n - 1]
+};
