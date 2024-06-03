@@ -23,7 +23,27 @@ s 由小写英文字母组成
 */
 
 // 动态规划
+// 布尔类型的 dp[i][j] 表示区间范围 [i,j] 的子串是否是回文子串
 // 时间复杂度：O(n^2)，空间复杂度：O(n^2)
+function countSubstrings(s: string): number {
+  let result = 0
+
+  const n = s.length
+  const dp: boolean[][] = new Array(n).fill(false).map(_ => new Array(n).fill(false))
+  // j 始终要大于 i，只需要填充 dp[i][j] 的右上半部分
+  for (let i = n - 1; i >= 0; i--) {
+      for (let j = i; j < n; j++) {
+          if (s[i] === s[j]) {
+              if (j - i <= 1 || dp[i + 1][j - 1]) {
+                  result++
+                  dp[i][j] = true
+              }
+          }
+      }
+  }
+
+  return result
+};
 
 // 双指针：找中心然后向两边扩散看是不是对称。注意：中心点可以是一个元素，也可以是两个相同的元素。
 // 时间复杂度：O(n^2)，空间复杂度：O(1)
