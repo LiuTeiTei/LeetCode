@@ -23,9 +23,28 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0045.%E8
 0 <= nums[i] <= 1000
 */
 
+// 动态规划
+// dp[i] 表示到达 nums[i] 的最小跳跃次数
+// dp[i] --> min(前 j 步可以跳到的话，dp[j] + 1)
+// 时间复杂度：O(n!)，空间复杂度：O(n)
+function jump(nums: number[]): number {
+  const dp: number[] = nums.map((_, index) => index)
 
+  for (let i = 1; i < nums.length; i++) {
+      for (let j = i - 1; j >= 0; j--) {
+          if (nums[j] >= i - j) {
+              dp[i] = Math.min(dp[j] + 1, dp[i])
+          }
+      }
+  }
+
+  return dp[nums.length - 1]
+};
+
+// 贪心算法
 // 局部最优：当前可移动距离尽可能多走，如果还没到终点，步数再加一。
 // 整体最优：一步尽可能多走，从而达到最小步数
+// 时间复杂度：O(n)，空间复杂度：O(1)
 function jump(nums: number[]): number {
   let result = 0
   // 当前覆盖的最远距离下标
@@ -45,5 +64,3 @@ function jump(nums: number[]): number {
 
   return result
 };
-
-jump([2,3,1,1,4])
