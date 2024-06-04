@@ -21,18 +21,36 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0055.%E8
 0 <= nums[i] <= 105
 */
 
-// 将问题转化为跳跃覆盖范围究竟可不可以覆盖到终点
-// 局部最优解：每次取最大跳跃步数（取最大覆盖范围）
-// 整体最优解：最后得到整体最大覆盖范围，看是否能到终点。
+// 动态规划
+// dp[i] 表示是否能到达 nums[i]
+// dp[i] --> (dp[i-1] && nums[i-1] >= 1) || (dp[i-2] && nums[i-2] >= 2) || ...... 推算
+// 时间复杂度：O(n!)，空间复杂度：O(n)
 function canJump(nums: number[]): boolean {
-  let maxCover = 0
+  const dp: boolean[] = new Array(nums.length).fill(false)
+  dp[0] = true
 
-  for (let i = 0; i <= maxCover; i++) {
-    maxCover = Math.max(maxCover, i + nums[i])
-    if (maxCover >= nums.length - 1) return true
+  for (let i = 1; i < nums.length; i++) {
+      for (let j = i - 1; j >= 0; j--) {
+          const stemp = dp[j] && nums[j] >= i - j
+          if (stemp) {
+              dp[i] = true
+              break
+          }
+      }
   }
 
+  return dp[nums.length - 1]
+}; 
+
+// 贪心算法 --> 将问题转化为跳跃覆盖范围究竟可不可以覆盖到终点
+// 局部最优解：每次取最大跳跃步数（取最大覆盖范围）
+// 整体最优解：最后得到整体最大覆盖范围，看是否能到终点
+// 时间复杂度：O(n)，空间复杂度：O(1)
+function canJump(nums: number[]): boolean {
+  let cover = 0
+  for (let i = 0; i <= cover && i < nums.length; i++) {
+      cover = Math.max(i + nums[i], cover)
+      if (cover >= nums.length - 1) return true
+  }
   return false
 };
-
-canJump([3,0,0,0])
