@@ -20,28 +20,25 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0078.%E5
 nums 中的所有元素 互不相同
 */
 
-// 子集是收集树形结构中树的所有节点的结果
-// 而组合问题、分割问题是收集树形结构中叶子节点的结果
+// 回溯算法
+// 时间复杂度: O(n * 2^n) 空间复杂度: O(n)
 function subsets(nums: number[]): number[][] {
   const result: number[][] = []
-  const path: number[] = []
 
-  const backtracking = (index: number) => {
-    result.push(path.slice())
+  const backtracking = (index: number, path: number[]) => {
+      result.push([...path])
 
-    // 终止条件可以不加，下面 for 循环的 i < nums.length 会排除 index === nums.length 的情况
-    // 因为求子集就是要遍历整棵树
-    if (index === nums.length) {
-      return
-    }
+      if (index >= nums.length) {
+          return
+      }
 
-    for (let i = index; i < nums.length; i++) {
-      path.push(nums[i])
-      backtracking(i + 1)
-      path.pop()
-    }
+      for (let i = index; i < nums.length; i++) {
+          path.push(nums[i])
+          backtracking(i + 1, path)
+          path.pop()
+      }
   }
 
-  backtracking(0)
+  backtracking(0, [])
   return result
 };
