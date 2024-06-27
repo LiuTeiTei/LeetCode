@@ -17,20 +17,21 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0096.%E4
 1 <= n <= 19
 */
 
-// 时间复杂度：O(n^2), 空间复杂度：O(n)
+// 动态规划
+// dp[i] 表示 i 个节点可以组成的二叉搜索树
+// dp[i] += dp[以 j 为头结点左子树节点数量] * dp[以 j 为头结点右子树节点数量]
+// dp[i] += dp[j - 1] * dp[i - j]
+// 因为 dp[1] = dp[0] * dp[0] = 1，因此 dp[0] = 1
+// 时间复杂度: O(n ^ 2) 空间复杂度: O(n)
 function numTrees(n: number): number {
   const dp = new Array(n + 1).fill(0)
   dp[0] = 1
-  dp[1] = 1
-  dp[2] = 2
 
-  for (let i = 3; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-      dp[i] = dp[i] + dp[j] * dp[i - j - 1]
-    }
+  for (let i = 1; i <= n; i++) {
+      for (let j = 1; j <= i; j++) {
+          dp[i] = dp[i] + dp[j - 1] * dp[i - j]
+      }
   }
 
   return dp[n]
 };
-
-numTrees(3)
