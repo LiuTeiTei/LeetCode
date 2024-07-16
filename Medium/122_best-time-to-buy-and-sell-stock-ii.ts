@@ -31,66 +31,64 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0122.%E4
 0 <= prices[i] <= 104
 */
 
-// 选一个低的买入，在选个高的卖，在选一个低的买入.....循环反复
-{
-  function maxProfit(prices: number[]): number {
-    let result = 0
-    let hasProfit = false
-  
-    for (let i = 0; i < prices.length - 1; i++) {
-      const curr = prices[i]
-      const next = prices[i + 1]
-      // 比之后的小就买入
-      if (curr < next && !hasProfit) {
-        hasProfit = true
-        result -= curr
-      } else if (curr > next && hasProfit) {
-        // 比之后的大就卖出
-        hasProfit = false
-        result += curr
-      }
-    }
-  
-    // 最后一个元素单独判断一下
-    if (hasProfit) {
-      hasProfit = false
-      result += prices[prices.length - 1]
-    }
-  
-    return result
-  };
-}
-
-// 贪心算法：局部最优-收集每天的正利润；全局最优-求得最大利润
-// 时间复杂度：O(n)，空间复杂度：O(1)
-{
-  function maxProfit(prices: number[]): number {
-    let result = 0
-  
-    for (let i = 1; i < prices.length; i++) {
-      result += Math.max(prices[i] - prices[i - 1], 0)
-    }
-  
-    return result
-  };
-}
-
-// 动态规划
-// 时间复杂度：O(n)，空间复杂度：O(n)
+// 暴力法
+// 选一个低的买入，在选个高的卖，在选一个低的买入.....循环反复。
+// 时间复杂度: O(n)，空间复杂度: O(1)
 function maxProfit(prices: number[]): number {
-  const dp: number[][] = []
+  let result = 0
+  let hasProfit = false
 
-  dp[0] = [-prices[0], 0]
-
-  for (let i = 1; i < prices.length; i++) {
-    dp[i] = []
-
-    // 和 121 唯一不同的是，可以反复购买股票
-    // 所以第 i 天买入股票，所得现金就是已有现金减去买入今天的股票后的现金，即 dp[i - 1][1] - prices[i]
-    dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] - prices[i])
-
-    dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] + prices[i])
+  for (let i = 0; i < prices.length - 1; i++) {
+    const curr = prices[i]
+    const next = prices[i + 1]
+    // 比之后的小就买入
+    if (curr < next && !hasProfit) {
+      hasProfit = true
+      result -= curr
+    } else if (curr > next && hasProfit) {
+      // 比之后的大就卖出
+      hasProfit = false
+      result += curr
+    }
   }
 
-  return dp[prices.length - 1][1]
+  // 最后一个元素单独判断一下
+  if (hasProfit) {
+    hasProfit = false
+    result += prices[prices.length - 1]
+  }
+
+  return result
+};
+
+// 贪心算法
+// 局部最优：收集每天的正利润；全局最优：求得最大利润。
+// 时间复杂度: O(n)，空间复杂度: O(1)
+function maxProfit(prices: number[]): number {
+  let result = 0
+
+  for (let i = 1; i < prices.length; i++) {
+      result += Math.max(prices[i] - prices[i - 1], 0)
+  }
+
+  return result
+};
+
+// 动态规划
+// 时间复杂度: O(n)，空间复杂度: O(n)
+function maxProfit(prices: number[]): number {
+  const dp: number[][] = []
+  dp[0] = [0, -prices[0]]
+
+  for (let i = 1; i < prices.length; i++) {
+      dp[i] = []
+
+      dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i])
+
+      // 和 121 唯一不同的是，可以反复购买股票
+      // 所以第 i 天买入股票，所得现金就是已有现金减去买入今天的股票后的现金，即 dp[i - 1][0] - prices[i]
+      dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i])
+  }
+
+  return dp[prices.length - 1][0]
 };
