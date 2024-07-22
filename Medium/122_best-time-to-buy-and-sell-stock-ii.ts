@@ -75,7 +75,7 @@ function maxProfit(prices: number[]): number {
 };
 
 // 动态规划
-// 时间复杂度: O(n)，空间复杂度: O(n)
+// 时间复杂度: O(n)，空间复杂度: O(2n)
 function maxProfit(prices: number[]): number {
   const dp: number[][] = []
   dp[0] = [0, -prices[0]]
