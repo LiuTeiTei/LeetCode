@@ -31,28 +31,55 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0213.%E6
 0 <= nums[i] <= 1000
 */
 
+// 动态规划
+// dp0[i] 表示没有偷 1 家时，最大偷窃金额
+// dp1[i] 表示可能偷了第 1 家时，最大偷窃金额
+// 时间复杂度: O(n) 空间复杂度: O(2n)
 function rob(nums: number[]): number {
-  if (nums.length === 1) return nums[0]
+  if (nums.length <= 1) return nums[0] ?? 0
   if (nums.length === 2) return Math.max(nums[0], nums[1])
 
-  const robPart = (numsPart: number[]): number => {
-    const dp: number[] = new Array(numsPart.length).fill(0)
+  const dp0 = new Array(nums.length)
+  const dp1 = new Array(nums.length)
+  dp0[0] = 0
+  dp0[1] = nums[1]
+  dp1[0] = nums[0]
+  dp1[1] = Math.max(nums[0], nums[1])
 
-    dp[0] = numsPart[0]
-    dp[1] = Math.max(numsPart[0], numsPart[1])
-  
-    for (let i = 2; i < numsPart.length; i++) {
-      dp[i] = Math.max(dp[i - 2] + numsPart[i], dp[i - 1])
-    }
-  
-    return dp[numsPart.length - 1]
+  for (let i = 2; i < nums.length - 1; i++) {
+      dp0[i] = Math.max(dp0[i - 1], dp0[i - 2] + nums[i])
+      dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + nums[i])
   }
 
-  // 不偷窃第一个房屋
-  const result1 = robPart(nums.slice(1))
+  dp0[nums.length - 1] = Math.max(dp0[nums.length - 2], dp0[nums.length - 3] + nums[nums.length - 1])
+  dp1[nums.length - 1] = dp1[nums.length - 2]
 
-  // 不偷窃最后一个房屋
-  const result2 = robPart(nums.slice(0, nums.length - 1))
+  return Math.max(dp0.at(-1), dp1.at(-1))
+};
 
-  return Math.max(result1, result2)
+// 动态规划
+// 时间复杂度: O(2n) 空间复杂度: O(n)
+function rob(nums: number[]): number {
+  if (nums.length <= 1) return nums[0] ?? 0
+
+  const robRange = (nums: number[]) => {
+      if (nums.length <= 1) return nums[0] ?? 0
+      
+      const dp = new Array(nums.length)
+      dp[0] = nums[0]
+      dp[1] = Math.max(nums[0], nums[1])
+
+      for (let i = 2; i < nums.length; i++) {
+          dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i])
+      }
+
+      return dp.at(-1)
+  }
+
+  // 可能偷第一家，一定不能偷最后一家
+  const res1 = robRange(nums.slice(0, nums.length - 1))
+  // 可能偷最后一家，一定不会偷第一家
+  const res2 = robRange(nums.slice(1, nums.length))
+
+  return Math.max(res1, res2)
 };
