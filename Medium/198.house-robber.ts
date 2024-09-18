@@ -26,16 +26,37 @@ https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0198.%E6
 通过
 */
 
+// 动态规划
+// dp[0][i] 表示可能偷了第 i-1 的情况下最大值，即不偷 i
+// dp[1][i] 表示没有偷第 i-1 的情况下最大值，即偷 i
+// dp[0][i] = max(dp[1][i - 1], dp[0][i - 1])
+// dp[1][i] = dp[0][i - 1] + nums[i]
+// 时间复杂度: O(n) 空间复杂度: O(2n)
 function rob(nums: number[]): number {
-  // dp[i]：考虑下标i（包括i）以内的房屋，最多可以偷窃的金额为dp[i]。
-  const dp: number[] = new Array(nums.length).fill(0)
+  const dp0 = new Array(nums.length)
+  const dp1 = new Array(nums.length)
+  dp0[0] = 0
+  dp1[0] = nums[0]
 
-  // 初始化
+  for (let i = 1; i < nums.length; i++) {
+      dp0[i] = Math.max(dp1[i - 1], dp0[i - 1])
+      dp1[i] = dp0[i - 1] + nums[i]
+  }
+
+  return Math.max(dp0.at(-1), dp1.at(-1))
+};
+
+// 动态规划
+// dp[i] 考虑下标i（包括i）以内的房屋，最多可以偷窃的金额为dp[i]
+// dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i])
+// 时间复杂度: O(n) 空间复杂度: O(n)
+function rob(nums: number[]): number {
+  const dp = new Array(nums.length)
   dp[0] = nums[0]
   dp[1] = Math.max(nums[0], nums[1])
 
   for (let i = 2; i < nums.length; i++) {
-    dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1])
+      dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i])
   }
 
   return dp[nums.length - 1]
