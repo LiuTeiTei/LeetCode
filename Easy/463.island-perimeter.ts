@@ -29,7 +29,7 @@ grid[i][j] 为 0 或 1
 */
 
 // 迭代
-// 时间复杂度: O(4mn) 空间复杂度: O(1)
+// 时间复杂度: O(5mn) 空间复杂度: O(1)
 function islandPerimeter(grid: number[][]): number {
   const row = grid.length
   const col = grid[0].length
@@ -52,7 +52,7 @@ function islandPerimeter(grid: number[][]): number {
 };
 
 // 深度优先搜索
-// 时间复杂度: O(4mn) 空间复杂度: O(mn)
+// 时间复杂度: O(5mn) 空间复杂度: O(mn)
 function islandPerimeter(grid: number[][]): number {
   const row = grid.length
   const col = grid[0].length

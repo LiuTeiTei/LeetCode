@@ -34,7 +34,7 @@ grid[i][j] 的值为 '0' 或 '1'
 
 // 遇到一个没有遍历过的节点陆地，计数器就加一，然后把该节点陆地所能遍历到的陆地都标记上。
 // 深度优先搜索
-// 时间复杂度: O(4mn) 空间复杂度: O(mn)
+// 时间复杂度: O(5mn) 空间复杂度: O(mn)
 function numIslands(grid: string[][]): number {
     const m = grid.length
     const n = grid[0].length
@@ -80,7 +80,7 @@ function numIslands(grid: string[][]): number {
 
 // 遇到一个没有遍历过的节点陆地，计数器就加一，然后把该节点陆地所能遍历到的陆地都标记上。
 // 广度优先搜索
-// 时间复杂度: O(4mn) 空间复杂度: O(mn)
+// 时间复杂度: O(5mn) 空间复杂度: O(mn)
 function numIslands(grid: string[][]): number {
     const m = grid.length
     const n = grid[0].length
