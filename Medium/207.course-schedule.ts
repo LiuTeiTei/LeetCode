@@ -71,3 +71,5 @@ function canFinish(numCourses: number, prerequisites: number[][]): boolean {
 
   return count === numCourses
 };
+
+canFinish(6, [[3, 0], [3, 1], [4, 1], [4, 2], [5, 3], [5, 4]])
